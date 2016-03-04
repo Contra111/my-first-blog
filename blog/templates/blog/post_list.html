@@ -1,17 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
+{% extends 'blog/base.html' %}
 
-<body>
-Расул гей
+{% block content %}
 	{% for post in posts %}
-		<div>
-			<p>published: {{ post.publish_date }}</p>
-			<h1>{{ post.title }}</h1>
+		<div class="post">
+			<div class="date">
+				{{ post.publish_date }}
+			</div>
+			<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
 			<p>{{ post.text|linebreaks }}</p>
 		</div>
 	{% endfor %}
-</body>
-</html>
+{% endblock content %}
