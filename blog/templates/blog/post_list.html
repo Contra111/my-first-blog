@@ -3,7 +3,15 @@
 <head>
 	<title></title>
 </head>
+
 <body>
-	<p>sport</p>
+Расул гей
+	{% for post in posts %}
+		<div>
+			<p>published: {{ post.publish_date }}</p>
+			<h1>{{ post.title }}</h1>
+			<p>{{ post.text|linebreaks }}</p>
+		</div>
+	{% endfor %}
 </body>
 </html>
